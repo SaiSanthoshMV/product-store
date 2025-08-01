@@ -1,12 +1,20 @@
+import { Box } from '@chakra-ui/react'
 import { useState } from 'react'
-import './App.css'
+import { Route, Routes } from 'react-router-dom'
+import Homepage from './pages/Homepage'
+import Createpage from './pages/Createpage'
+import Navbar from './components/Navbar'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>Hi</div>
+      <Box minH={'100vh'}>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/create" element={<Createpage />} />
+        </Routes>
+      </Box>
     </>
   )
 }
